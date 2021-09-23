@@ -8,7 +8,7 @@ var regresar="regresar a casa con tortillas";
 if (dinero=="agarrar dinero"){
     console.log("salir de la casa con dinero");
 }else{
-    console.log("no salir de casa");
+    console.log(" salir de casa");
 }
 console.log("comprar el kilo de tortillas");
 if(tortillas=="Comparar el kilo"){
@@ -17,5 +17,5 @@ if(tortillas=="Comparar el kilo"){
 else{
     if(esperar=="esperar cambio"){
         console.log("regresar a casa con las tortillas");
-    }}
-    
+    }
+}
