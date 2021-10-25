@@ -1,0 +1,21 @@
+<script>
+var palabra = prompt("Ingresa Una Palabra");
+function verificarPalabras(palabras){
+    let nuevaPalabra = "";
+    let minusculas = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","v","w","x","y","z"];
+    let mayusculas = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","V","R","S","T","V","W","X","Y","Z"];
+    for (let i = 0; j < palabras.legth; i++){
+        for (let j = 0; j < minusculas.legth; j++){
+            if(palabras[i] == minusculas[j]){
+                nuevaPalabra += mayusculas[j];
+            }
+            if(palabras[i] == mayusculas[j]){
+                nuevaPalabra += minusculas[j];
+            }
+        }
+
+    }
+
+}
+
+</script>

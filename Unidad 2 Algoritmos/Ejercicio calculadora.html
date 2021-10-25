@@ -1,4 +1,27 @@
 <script>
-var 
+var total = 0;
+var n1;
+var n2;
+var operacion = prompt ("operacion: ");
+n1 = parseInt(prompt ("Primer Numero: "));
+n2 = parseInt (prompt ("Segundo Numero: "));
+switch (operacion){
+    case "suma":
+        sumarDosNumeros(n1,n2);
+    break;
+    case "resta":
+        restarDosNumeros(n1,n2);
+    break;
+    default:
+        alert("Operacion No Valida");
+    break;
 
+}
+console.log (total);
+function sumarDosNumeros(n1,n2){
+    total = n1 + n2;
+}
+function restarDosNumeros(n1,n2){
+    total = n1-n2;
+}
 </script>
