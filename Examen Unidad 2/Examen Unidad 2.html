@@ -1,10 +1,99 @@
 <script>
-    // Discografia 
-    
-    var opciones = (prompt ("Opciones De Discografia"));
-    
-    
-    
-    
-    
-    </script>
+// Discografia
+
+    var bandas = [];
+    var album = [];
+    var canciones = [];
+    var genero12 = [];
+    var ban = [];
+    var bun = [];
+    var can = [];
+    var dur = [];
+
+alert("Bienvenido al programa de disqueras");
+        var nBandas = parseInt(prompt("¿Cuantas bandas quieres registrar?"));
+            for(var i = 0; i < nBandas; i++){
+                var nombre = prompt("Ingresa el nombre de la banda No. " + (i + 1));
+                ban[i] = nombre;
+                var genero = prompt("Ingresa el genero de la banda " + nombre);
+                genero12 [i] = genero;
+                var anio =  prompt("Ingresa el año de la banda " + nombre);
+
+                var bandas1 = {
+                    "Nombre" : nombre,
+                    "Genero" : genero,
+                    "Año" : anio
+                }
+                bandas.push(bandas1);
+            }
+        var nAlbum = parseInt(prompt("¿Cuantos albums quieres registrar?"));
+            for (var e = 0; e < nAlbum; e++) {
+                var nombreB = prompt("Ingresa el nombre del album No. " + (e + 1));
+                bun [e] = nombreB;
+                var bandaN = prompt("Ingresa el nombre de la banda");
+                var anio1 = prompt("Ingresa el año en que se lanzo el album " + nombreB);
+
+                var album1 = {
+                    "Nombre": nombreB,
+                    "Banda": bandaN,
+                    "Año": anio1
+                } 
+                album.push(album1);
+            }
+        var nCanciones = parseInt(prompt("¿Cuantas canciones quieres registrar?"));
+            for (var r = 0; r < nCanciones; r++) {
+                var nombreC = prompt("Ingresa el nombre de la cancion No. " + (r + 1));
+                can [r] = nombreC;
+                var bandaM = prompt("Ingresa el nombre de la banda");
+                var duracion = prompt("Ingresa la duracion de la cancion " + nombreC);
+                dur [r] = duracion;
+
+                var nCanciones1 = {
+                    "Nombre": nombreC,
+                    "Banda": bandaM,
+                    "Duracion": duracion
+                }
+                canciones.push(nCanciones1);
+        }
+    do {
+    var menu = parseInt(prompt("Menu" + "\n" + "\n" + "Presiona 1: para mostrar por genero" + "\n" + "Presiona 2: Para mostrar informacion por album" + "\n" + "Presiona 3: Para buscar cancion en especifico" + "\n" + "Presiona 4: Para Mostar todo lo registrado"));
+    switch (menu){
+        case 1:
+            var g = prompt("Que genero quieres mostrar");
+            console.log (g);
+            for (var m = 0; m < nBandas; m++){
+                if (g == genero12[m]){
+                    console.log ("Banda: " + ban[m] + "\n", "Album: " + bun[m]);
+                }
+            } 
+        break;
+        case 2: 
+            var jsjs = prompt("Ingresa el album a mostrar");
+            for (var z = 0; z < nAlbum; z++){
+                if (jsjs == bun[z]){
+                    console.log (album[z]);
+                }
+            } 
+        break;
+        case 3: 
+            var p = prompt("Ingresa cancion a mostrar");
+            for (var l = 0; l < nCanciones; l++){
+                if (p == can[l]){
+                    console.log (canciones[l]);
+                }
+            }
+            break;
+        case 4:
+            console.log ("bandas");
+            console.log (bandas);
+            console.log ("albumes");
+            console.log (album );
+            console.log ("canciones");
+            console.log (canciones);
+            break;
+        default: 
+            alert("No se encontro su peticion");
+    }
+    var y = prompt("¿Quieres ejecutar otra opcion?"); 
+} while ( y == "si" || y == "Si" || y == "SI" || y == "sI");
+</script>
