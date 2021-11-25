@@ -1,0 +1,100 @@
+<script>
+    var jugador1 = "";
+    var jugador2 = "";
+    var tablero1 = ["|0|", "|0|", "|0|", "|0|", "|0|", "|0|", "|0|", "|0|", "|0|", "|0|"];
+    var tablero2 = ["|0|", "|0|", "|0|", "|0|", "|0|", "|0|", "|0|", "|0|", "|0|", "|0|"];
+    juego();
+
+    function juego(){
+        alert("¡Bienvenido al juego demuestra tus habilidades y compite contra otros usuarios!" + "\n" + "¿Listo?" + "\n" + "Presiona el boton Aceptar para continuar");
+        nombres();
+        alert("¡Muy bien! Posiciona tus barcos jugador " + jugador1 + "" + "\n" + "RECORDATORIO :" + "\n" + "-Solo tienes 3 barcos para posicionar" + "\n" + "-Tu tablero es de 1 dimension y solo tiene 10 espacios" + "\n" + "-Recuerda No mostrar tu tablero");
+        tableros();
+        jugar();
+    }
+    function nombres() {
+        jugador1 = prompt("Ingresa el nombre del jugador 1");
+        jugador2 = prompt("Ingresa el nombre del jugador 2");
+    }
+    function tableros(){
+        for(var e = 0; e < 2; e++){
+            if(e == 0){
+                alert("Jugador " + jugador1+ " El siguiente es tu tablero:" + "\n" + tablero1);
+                for (var i = 0; i < 3; i++) {
+                    var barco = parseInt(prompt(tablero1 + "\n" + "¿En que posicion deseas insertar el barco No." + (i + 1) + "?"));
+                    tablero1[(barco - 1)] = "|☻|";
+                }
+                alert("Tus barcos han quedado posicionados asi:" + "\n" + tablero1);
+            }else{
+                alert("Jugador " + jugador2 + " El siguiente es tu tablero:" + "\n" + tablero2);
+                    for (var i = 0; i < 3; i++) {
+                        var barco = parseInt(prompt(tablero2 + "\n" + "¿En que posicion deseas insertar el barco No." + (i + 1) + "?"));
+                        tablero2[(barco - 1)] = "|☻|";
+                }
+                alert("Tus barcos han quedado posicionados asi:" + "\n" + tablero2);
+            }
+        }
+        alert("¿Listos para jugar?" + "\n" + "Presiona el boton Aceptar para continuar");
+    }
+
+    function jugar(){
+        var desicion = "si"
+        var dFinal = true;
+        var aux = true;
+        var hundido1 = 3;
+        var hundido2 = 3;
+
+        do{
+        while(dFinal == true){
+            if(aux == true){
+                if(aux == true){
+                    alert("Es turno del jugador " + jugador1);
+                }
+                var p = parseInt(prompt("Ingresa la posicion en el tablero de tu contrincante donde crees que hay un barco"));
+                if(tablero2[(p - 1)] == "|☻|"){
+                    tablero2[(p - 1)] = "|0|"
+                    hundido2 -= 1;
+                    alert("¡Muy bien! Has hundido un barco de tu contrincante")
+                    console.log("Te han hundido un barco " + jugador2);
+                    alert("Es turno del jugador: " + jugador2);
+                    alert("Te han hundido un barco, tu tablero a quedado solo con " + hundido2 + " barcos:" + "\n" + tablero2);
+                }else{
+                    alert("¡Que mala suerte! No has atinado" + "\n" + "¡Espera al siguiente turno!");
+                    console.log("No te han hundido ningun barco " + jugador2);
+                    alert("Es turno del jugador: " + jugador2);
+                }
+                aux = false;    
+                if(aux == false){
+                    var p = parseInt(prompt("Ingresa la posicion en el tablero de tu contrincante donde crees que hay un barco"));
+                    if (tablero1[(p - 1)] == "|☻|") {
+                        tablero1[(p - 1)] = "|0|"
+                        hundido1 -= 1; 
+                        alert("¡Muy bien! Has hundido un barco de tu contrincante");
+                        console.log("Te han hundido un barco " + j1);
+                        alert("Te han hundido un barco, tu tablero a quedado solo con " + hundido1 + " barcos:" + "\n" + tablero1);
+                    } else {
+                        alert("¡Que mala suerte! No has atinado" + "\n" + "¡Espera al siguiente turno!");
+                        console.log("No te han hundido ningun barco " + j1);
+                    }
+                }
+                aux = true;
+            }
+            if (hundido1 == 0) {
+                dFinal = false;
+                alert("El ganador es: " + jugador2 + "\n" + "Perdio" + jugador1);
+                console.log("El ganador es: " + jugador2)
+                console.log("El perdedor es: " + jugador1)
+            }
+            if(hundido2 == 0){
+                dFinal = false;
+                alert("El ganador es: " + jugador1 + "\n" + "Perdio" + jugador2);
+                console.log("El ganador es: " + jugador1)
+                console.log("El perdedor es: " + jugador2)
+            }
+        }
+        desicion = prompt("¿Deseas volver a jugar?");
+    }while(desicion == "Si" || desicion == "si" || desicion == "sI" || desicion == "SI");
+    }
+
+
+</script>
