@@ -1,0 +1,36 @@
+<script>
+alert("Bienvendio a un Generador de Curp a continuacion Ingresa tus datos");
+    var apaterno = prompt("Ingresa tu apellido paterno");
+    var amaterno = prompt("Ingresa tu apellido materno");
+    var nombres = prompt("Ingresa tu nombre");
+    var genero = prompt("ingresa tu sexo");
+    var Estado = prompt("ingresa tu entidad federativa");
+    var fecha = prompt("Ingresa tu fecha de nacimiento ejemplo: 00/00/00");
+
+    function generarCURP() {
+        abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        random09a = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
+        random09b = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
+        randomAZ = Math.floor(Math.random() * (26 - 0 + 1)) + 0;
+        ano = Number((fecha).val().slice(6, 10));
+
+        var CURP = [];
+        CURP[0] = (apaterno).val().charAt(0).toUpperCase();
+        CURP[1] = (apaterno).val().slice(1).replace(/\a\e\i\o\u/gi, "").charAt(0).toUpperCase();
+        CURP[2] = (amaterno).val().charAt(0).toUpperCase();
+        CURP[3] = (nombres).val().charAt(0).toUpperCase();
+        CURP[4] = ano.toString().slice(2);
+        CURP[5] = (fecha).val().slice(3, 5);
+        CURP[6] = (fecha).val().slice(0, 2);
+        CURP[7] = (genero).val().toUpperCase();
+        CURP[8] = abreviacion[Estados.indexOf((Estado).val().toLowerCase())];
+        CURP[9] = (apaterno).val().slice(1).replace(/[aeiou]/gi, "").charAt(0).toUpperCase();
+        CURP[10] = (amaterno).val().slice(1).replace(/[aeiou]/gi, "").charAt(0).toUpperCase();
+        CURP[11] = (nombres).val().slice(1).replace(/[aeiou]/gi, "").charAt(0).toUpperCase();;
+        CURP[12] = ano < 2000 ? random09a : abc[randomAZ];
+        CURP[13] = random09b;
+        return CURP.join("");
+    }
+    var estados = ["aguascalientes", "baja california", "baja california sur", "campeche", "chiapas", "chihuahua", "coahuila", "colima", "ciudad de mexico", "distrito federal", "durango", "guanajuato", "guerrero", "hidalgo", "jalisco", "estado de mexico", "michoacan", "morelos", "nayarit", "nuevo leon", "oaxaca", "puebla", "queretaro", "quintana roo", "san luis potosi", "sinaloa", "sonora", "tabasco", "tamaulipas", "tlaxcala", "veracruz", "yucatan", "zacatecas"];
+    var abreviacion = ["AS", "BC", "BS", "CC", "CS", "CH", "CL", "CM", "CX", "DF", "DG", "GT", "GR", "HG", "JC", "MC", "MN", "MS", "NT", "NL", "OC", "PL", "QT", "QR", "SP", "SL", "SR", "TC", "TS", "TL", "VZ", "YN", "ZS"];
+</script>
