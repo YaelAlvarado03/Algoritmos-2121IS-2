@@ -21,9 +21,11 @@ class fecha{//se declara la clase
 	}
 	
 	fecha::fecha(long fech){
-		anio=int (fech/10000);
-		mes=int ((fech-anio*10000/100));
-		dia=int (fech-anio*10000-mes*100);
+		
+		dia=  fech-anio*10000-mes*100;
+		mes=  fech-anio*10000/100;
+		anio= fech/10000;
+		
 	}
 	
 	void fecha::mostrar(){
