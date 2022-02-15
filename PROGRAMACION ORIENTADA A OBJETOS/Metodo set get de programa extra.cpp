@@ -10,7 +10,7 @@ class cuadrado{
 		cuadrado();
 		~cuadrado ();
 		void setperimetro(int);//funcion metodo set
-		int getrectanguloa();//metodo get
+		int getcuadradoa();//metodo get
 };
 //constructor
 cuadrado::cuadrado(){
@@ -25,24 +25,15 @@ void cuadrado::setperimetro(int la){
 	perim = lado*4;
 	cout<<"El perimetro del cuadrado es: "<<perim<<endl;
 }
-/*void cuadrado::perimetro(){
-	int perim;	
-	perim = lado*4;
-	cout<<"El perimetro del cuadrado es:"<<perim<<endl;
-}*/
 //establecer el metodo get
-int cuadrado::getrectanguloa(){
+int cuadrado::getcuadradoa(){
 	return lado;
 }
-/*int Rectangulo::getRectangulob(){
-	return ba;
-}*/
+
 int main(){
 	cuadrado R1;
 	R1.setperimetro(5);
-	//cout<<"El perimetro es: "<<R1.getrectanguloa()<<endl;
-	//cout<<"El perimetro del cuadrado es: "<<R1.getrectanguloa()<<endl;
-	
+		
 	system ("pause");
 	return 0;
 }

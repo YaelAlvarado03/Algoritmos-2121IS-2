@@ -1,50 +1,48 @@
-#include <iostream>
-#include <stdio.h>
+#include<iostream>
+#include<stdio.h>
 #include <math.h>
-
 using namespace std;
 
-class fecha{
-private:
-	int anio;
-	int mes;
-	int dia;
-	
-public:
-	fecha(int, int, int);
-	fecha(long);
-	void mostrar();
-	
+class cuadrado{
+	private:
+		int lado; // get 
+	public:
+		cuadrado();
+		~cuadrado ();
+		void setperimetro(int);//funcion metodo set
+		int getrectanguloa();//metodo get
 };
-
-fecha::fecha(int _anio, int _mes, int _dia){
-	anio=_anio;
-	mes=_mes;
-	dia=_dia;	
+//constructor
+cuadrado::cuadrado(){
 }
-
-fecha::fecha(long Fecha){
-	anio=int(Fecha/10000);
-	mes =int((Fecha-anio*10000)/100);
-	dia=int(Fecha-anio*10000-mes*100);
+//destructor 
+cuadrado::~cuadrado(){
 }
-
-void fecha::mostrar(){
-	cout<< "La fecha es: "<<dia<<"/"<<mes<<"/"<<anio<<endl;
-	cout<< "El dia es: "<<dia<<endl;
-	cout<< "El mes es: "<<mes<<endl;
-	cout<<"El anio es: "<<anio<<endl;
+//establezco valores a los atributos
+void cuadrado::setperimetro(int la){
+	lado = la;
+	int perim;	
+	perim = lado*4;
+	cout<<"El perimetro del cuadrado es: "<<perim<<endl;
 }
-	
+/*void cuadrado::perimetro(){
+	int perim;	
+	perim = lado*4;
+	cout<<"El perimetro del cuadrado es:"<<perim<<endl;
+}*/
+//establecer el metodo get
+int cuadrado::getrectanguloa(){
+	return lado;
+}
+/*int Rectangulo::getRectangulob(){
+	return ba;
+}*/
 int main(){
-	int fechar;
-	cout<<"Bienvenido digite la fecha en anio/mes/dia: "<<endl;
-	cout<<"Digite el anio mes y dia: ";
-	cin>>fechar;
-	fecha f1(fechar);
-	//fecha fe(fechar);
-	//fe.mostrar();
-	f1.mostrar();
-	system("pause");
+	cuadrado R1;
+	R1.setperimetro(5);
+	//cout<<"El perimetro es: "<<R1.getrectanguloa()<<endl;
+	//cout<<"El perimetro del cuadrado es: "<<R1.getrectanguloa()<<endl;
+	
+	system ("pause");
 	return 0;
 }
