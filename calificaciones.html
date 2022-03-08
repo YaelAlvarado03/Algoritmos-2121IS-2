@@ -1,0 +1,17 @@
+<script>
+
+var alexander = {
+    descripcion: "Sin puntos de ser",
+    calificaciones: [9,10,8,5,.5,6],
+    prom: function(){
+        var result=0;
+        for (let i=0; i<this.calificaciones.length;i++)
+        {
+            result=result+this.calificaciones[i]/this.calificaciones.length;
+        }
+        return result;
+    }
+}
+    alexander.prom();
+
+</script>
